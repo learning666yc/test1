@@ -3,15 +3,48 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Video</title>
+    <title>Product Operation Video</title>
     <style>
-        body{margin:0;background:#000;display:flex;align-items:center;justify-content:center;height:100vh;}
-        video{width:100%;max-width:800px;outline:none;}
+        /* 适配所有设备，视频居中，无黑边 */
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #000;
+            min-height: 100vh;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .video-container {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        /* 提示文字（加载失败时显示） */
+        .fallback {
+            color: #fff;
+            text-align: center;
+            font-size: 16px;
+            padding: 20px;
+        }
     </style>
 </head>
 <body>
-    <video controls autoplay loop>
-        <source src="video.mp4" type="video/mp4">
-    </video>
+    <div class="video-container">
+        <!-- 替换成你自己的视频 RAW 链接！！！ -->
+        <video controls autoplay muted loop preload="auto">
+            <source src="https://raw.githubusercontent.com/learning666yc/test1/main/video.mp4" type="video/mp4">
+            <div class="fallback">
+                无法播放视频？请点击链接：https://raw.githubusercontent.com/learning666yc/test1/main/video.mp4
+            </div>
+        </video>
+    </div>
 </body>
 </html>
